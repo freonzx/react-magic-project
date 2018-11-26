@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
@@ -83,6 +84,7 @@ function SearchAppBar(props) {
             Magic Card Search
           </Typography>
           <div className={classes.grow} />
+          {/*<Button color="inherit">MY DECK</Button>*/}
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

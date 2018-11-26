@@ -4,18 +4,17 @@ import CheckIcon from '@material-ui/icons/Check';
 
 const CardList = (props) => {
 
-	const handleAdd = (item) => {
-		props.addToDeck(item)
+	const handleDel = (id) => {
+		props.delete(id)
 	}
 
     return (<Grid container direction="row" spacing={24} justify="center" alignContent="center">
 			<Grid item xs={12} align="center">
 				<Typography variant="h6" style={{marginTop: "15px", display: "blick"}}>
-					{props.total > 0 ? <p>Found {props.total} results.</p> : null}
+					{props.total} cards on deck.
 				</Typography>
 			</Grid>
 				{props.data.map((item, i) => (
-					
 				<Grid item sm={12} md={6} lg={3} xs={3} >
 					<Card>
 	                <CardMedia style={{ height: 0, paddingTop: '150%'}}
@@ -31,14 +30,12 @@ const CardList = (props) => {
 	                    </Typography>
 	                </CardContent>
 	                <CardActions>
-	                    <Button size="small" variant= "outlined" color="primary" onClick={() => handleAdd(item)}>
-	                        Add To Deck
+	                    <Button size="small" variant= "outlined" color="primary" onClick={() => handleDel(i)}>
+	                        Remove
 	                    </Button>
 	                    <Button size="small" variant="outlined" color="primary" href={item.scryfall_uri } target="_blank">
 	                    	More Ifo
 	                    </Button>
-
-	                    {props.deck.includes(item) ? <CheckIcon style={{color: "green"}} /> : '' }
 	                </CardActions>
 					</Card>
 				</Grid>
